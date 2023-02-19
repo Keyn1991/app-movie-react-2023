@@ -1,0 +1,7 @@
+.MovieGenres{
+    display: flex;
+}
+
+.GenreBarge{
+    margin-right: 5px;
+}

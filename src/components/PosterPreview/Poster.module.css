@@ -1,0 +1,10 @@
+.PosterPreview{
+    margin-top: 3px;
+    border: 1px solid #b0b0b0;
+    border-radius: 1%;
+    padding: 5px;
+}
+
+.img{
+    width: 100%;
+}

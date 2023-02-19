@@ -1,0 +1,13 @@
+.Movies {
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+}
+
+.page_buttons{
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}

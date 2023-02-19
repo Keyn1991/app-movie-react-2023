@@ -1,0 +1,18 @@
+.Movie{
+    width: 19%;
+
+    margin: 5px;
+
+    text-decoration: none;
+}
+
+.title{
+    color: #6697af;
+    font-size: 20px;
+}
+
+.release_date{
+    font-size: 13px;
+    color: #868686;
+}
+

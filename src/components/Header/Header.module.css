@@ -1,0 +1,22 @@
+.Header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 10px;
+    margin-bottom: 5px;
+
+    background: gray;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+
+    margin-left: 1%;
+}
+
+.title{
+    color: #fffaf5;
+    font-size: 20px;
+}
