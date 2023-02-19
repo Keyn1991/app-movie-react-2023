@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 
-import css from './Movie.module.css'
+import css from './MovieListCard.module.css'
 import {Skeleton} from "@mui/material";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
@@ -22,14 +22,12 @@ const MoviesListCard = ({movie}) => {
 
     return (
         <div>
-            <h3>
-                MoviesListCard
-            </h3>
 
-            <Link className={css.Movie} to={`/movie${movie.id}`}>
+
+            <Link className={css.Movie} to={`/movie/${movie.id}`}>
                 {loading ? (<Skeleton variant={'rounded'} width={'100%'} height={'619px'}/>)
                     :
-                    <div className='movieCard'>
+                    <div className={'MoviesListCard'}>
 
                         <PosterPreview title={title} poster={poster_path}/>
 

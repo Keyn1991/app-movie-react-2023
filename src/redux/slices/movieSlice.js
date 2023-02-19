@@ -1,11 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {movieService} from "../../services";
 
-let initialState = {
+const initialState = {
     movies: [],
 };
 
-let getAllMovies = createAsyncThunk(
+const getAllMovies = createAsyncThunk(
 
     'getAllMovies',
 
@@ -20,15 +20,13 @@ let getAllMovies = createAsyncThunk(
     }
 );
 
-let getMovie = createAsyncThunk(
+const getMovie = createAsyncThunk(
 
     'getMovie',
 
     async (id, {rejectWithValue,}) => {
         try {
             let {data} = await movieService.getOneMovie(id)
-
-            console.log(id)
 
             return data
         } catch (e) {
@@ -37,7 +35,7 @@ let getMovie = createAsyncThunk(
     }
 );
 
-let searchMovie = createAsyncThunk(
+const searchMovie = createAsyncThunk(
     "searchMovie",
     async (word, {rejectedWithValue}) => {
         try {
@@ -49,25 +47,33 @@ let searchMovie = createAsyncThunk(
     }
 )
 
-let movieSlice = createSlice({
+const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
-    extraReducers: {
-        [getAllMovies.fulfilled]: (state, action) => {
-            state.movies = action.payload
-        },
-        [getMovie.fulfilled]: (state, action) => {
-            state.movie = action.payload
-        },
-        [searchMovie.fulfilled]: (state,action) => {
+    reducers: {
+        setMovies: (state, action) => {
             state.movies = action.payload;
         },
-    }
+        setMovie: (state, action) => {
+            state.movie = action.payload;
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getAllMovies.fulfilled, (state, action) => {
+                state.movies = action.payload;
+            })
+            .addCase(getMovie.fulfilled, (state, action) => {
+                state.movie = action.payload;
+            })
+            .addCase(searchMovie.fulfilled, (state, action) => {
+                state.movies = action.payload;
+            });
+    },
 });
+const {reducer: movieReducer} = movieSlice;
 
-let {reducer: movieReducer} = movieSlice;
-
-let movieAction = {
+const movieAction = {
     getAllMovies,
     getMovie,
     searchMovie,

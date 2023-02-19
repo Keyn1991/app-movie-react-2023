@@ -6,9 +6,9 @@ import {Badge} from "reactstrap";
 import css from './GenreBarge.module.css'
 const GenreBadge = ({movie}) => {
 
-    let [genres, setGenres] = useState([]);
+    const [genres, setGenres] = useState([]);
 
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(()=>{
         dispatch(genreAction.getGenres()).then(({payload})=> setGenres(payload.genres))

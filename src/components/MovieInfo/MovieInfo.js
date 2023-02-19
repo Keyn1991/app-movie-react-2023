@@ -13,25 +13,25 @@ import {Button,Skeleton} from "@mui/material";
 
  const MovieInfo = () => {
 
-    let {movie} = useSelector(state => state.movie);
+    const {movie} = useSelector(state => state.movie);
 
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    let {id} = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
         if (id) dispatch(movieAction.getMovie(id))
     }, [id])
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     //Skeleton Loading
-    let [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
-            setLoading(false)},1000)
+            setLoading(false)},100)
     })
 
     return (<div className={css.MovieInfo}>
@@ -45,7 +45,7 @@ import {Button,Skeleton} from "@mui/material";
                         onClick={() => navigate(-1)}>Back</Button>}
 
 
-            {movie ? <div className='MovieInfo'>
+            {movie ? <div className={css.MovieInfo}>
 
                     {loading ? (<Skeleton variant={"rounded"} height={'313px'} width={'512px'}/>)
                         :

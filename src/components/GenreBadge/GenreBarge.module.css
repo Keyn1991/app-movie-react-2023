@@ -1,7 +1,13 @@
 .MovieGenres{
     display: flex;
+    color: black;
+
 }
 
 .GenreBarge{
+    border-radius: 40px;
+    border: 1px solid black;
     margin-right: 5px;
+    background: tomato;
+
 }

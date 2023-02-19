@@ -4,7 +4,7 @@
 const baseURL = "https://api.themoviedb.org/3";
 
 
-let posterURL = 'https://image.tmdb.org/t/p/w200'
+let posterURL = 'https://image.tmdb.org/t/p/w500'
  const urls = {
 
      movies: '/discover/movie',
