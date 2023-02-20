@@ -1,6 +1,7 @@
 .MovieGenres{
     display: flex;
-    color: black;
+    color: white;
+
 
 }
 
@@ -8,6 +9,8 @@
     border-radius: 40px;
     border: 1px solid black;
     margin-right: 5px;
-    background: tomato;
+    background: #282c34;
+    padding: 5px;
 
 }
+a {text-decoration: none;}

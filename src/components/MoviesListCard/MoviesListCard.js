@@ -2,10 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 
 import css from './MovieListCard.module.css'
-import {Skeleton} from "@mui/material";
 import {PosterPreview} from "../PosterPreview/PosterPreview";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
 import {StarsRating} from "../StarsRating/StarsRating";
+
+import {Skeleton} from "@mui/material";
 
 const MoviesListCard = ({movie}) => {
 
@@ -24,26 +25,23 @@ const MoviesListCard = ({movie}) => {
         <div>
 
 
-            <Link className={css.Movie} to={`/movie/${movie.id}`}>
-                {loading ? (<Skeleton variant={'rounded'} width={'100%'} height={'619px'}/>)
-                    :
+            <Link className={css.MovieListCard} to={`/movie/${movie.id}`}>
+
                     <div className={'MoviesListCard'}>
+                    <GenreBadge movie={movie}/>
 
                         <PosterPreview title={title} poster={poster_path}/>
+                        <StarsRating movie={movie}/>
 
-                        <div className={css.title}>
+                        <div className={css.MainMovieTitle}>
                             {title}
                         </div>
 
-                        <div className={css.release_date}>
-                            Release Date: {release_date}, {original_language}
-                        </div>
 
-                        <GenreBadge movie={movie}/>
 
-                        <StarsRating movie={movie}/>
 
-                    </div>}
+
+                    </div>
 
 
             </Link>

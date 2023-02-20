@@ -7,11 +7,11 @@ import {movieAction} from "../../redux";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 const MoviesList = () => {
 
-    let {movies} = useSelector(state => state.movie)
+    const {movies} = useSelector(state => state.movie)
 
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-    let [query, setQuery] = useSearchParams({page: '1'});
+    const [query, setQuery] = useSearchParams({page: '1'});
 
     useEffect(() => {
 
@@ -19,26 +19,37 @@ const MoviesList = () => {
 
     }, [dispatch, query]);
 
-    let nextPage = () => {
+    const nextPage = () => {
         setQuery(value => ({page: +value.get('page') + 1}))
     };
 
-    let prevPage = () => {
+    const prevPage = () => {
         setQuery(value => ({page: value.get('page') - 1}))
     };
 
     return (
-        <div className={css.Movies}>
+        <div>
 
+            <div className={css.Movies}>
 
-            <div className={css.page_buttons}>
-                <button disabled={+query.get('page') < 2} onClick={prevPage}>Previous Page</button>
+                <div className={css.pageButtons}>
+                    <button disabled={+query.get('page') < 2} onClick={prevPage} className={css.prevButton}>Previous Page</button>
 
-                <button disabled={+query.get('page') > 499} onClick={nextPage}>Next Page</button>
+                    <button disabled={+query.get('page') > 499} onClick={nextPage} className={css.nextButton}>Next Page</button>
+                </div>
+
+                {
+                    movies.results?.map(movie => <MoviesListCard key={movie.id} movie={movie} />)
+                }
+
             </div>
-            {
-                movies.results?.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)
-            }
+
+            <div className={css.pageButtons}>
+                <button disabled={+query.get('page') < 2} onClick={prevPage} className={css.prevButton}>Previous Page</button>
+
+                <button disabled={+query.get('page') > 499} onClick={nextPage} className={css.nextButton}>Next Page</button>
+            </div>
+
         </div>
     );
 };

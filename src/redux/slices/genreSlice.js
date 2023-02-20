@@ -5,11 +5,13 @@ import {genreService} from "../../services";
 
 let initialState = {
     genres: [],
+    error:null,
+    loading:false
 };
 
-let getGenres = createAsyncThunk(
+const getAllGenres = createAsyncThunk(
 
-    'getGenre',
+    'getAllGenre',
 
     async (_, {rejected}) => {
         try {
@@ -23,16 +25,28 @@ let getGenres = createAsyncThunk(
 
 let genreSlice = createSlice({
     name: 'genreSlice',
-    initialState
+    initialState,
+    reducers: {},
+
+    extraReducers:builder =>
+        builder.addCase(getAllGenres.fulfilled, (state, action)=>{
+            state.genres = action.payload
+            state.loading =false
+        })
+            .addCase(getAllGenres.pending, (state, action) => {
+                state.error=action.payload
+            })
+
 });
 
-let {reducer: genreReducer} = genreSlice;
+const {reducer: genreReducer} = genreSlice;
 
-let genreAction = {
-    getGenres
+const genreAction = {
+    getAllGenres
 };
 
 export {
+    genreSlice,
     genreAction,
     genreReducer,
 };

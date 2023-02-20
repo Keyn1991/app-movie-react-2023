@@ -11,11 +11,11 @@ const GenreBadge = ({movie}) => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(genreAction.getGenres()).then(({payload})=> setGenres(payload.genres))
+        dispatch(genreAction.getAllGenres()).then(({payload})=> setGenres(payload.genres))
     },[])
 
     let genreBarge = genres.filter(genre=>movie.genre_ids.includes(genre.id)).map(data=>data.name)
-    genreBarge.length = 3;
+    genreBarge.length = 1;
 
 
 

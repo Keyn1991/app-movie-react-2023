@@ -20,14 +20,13 @@ const Search = () => {
 
     return (
         <div className={css.searchInput}>
-
-            <input className={css.input}
-                   type="text"
-                   placeholder={'Lets find your movie...'}
-                   onChange={(event) => setRequest(event.target.value)}
-                   value={request}
+            <input
+                className={`${css.input} input`}
+                type="text"
+                placeholder={'Lets find your movie...'}
+                onChange={(event) => setRequest(event.target.value)}
+                value={request}
             />
-
         </div>
     );
 };
