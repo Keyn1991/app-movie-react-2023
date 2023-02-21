@@ -3,19 +3,19 @@ import {genreService} from "../../services";
 
 
 
-let initialState = {
+const initialState = {
     genres: [],
     error:null,
     loading:false
 };
 
-const getAllGenres = createAsyncThunk(
+export const getAllGenres = createAsyncThunk(
 
     'getAllGenre',
 
     async (_, {rejected}) => {
         try {
-            let {data} = await genreService.getAllGenres();
+            const {data} = await genreService.getAllGenres();
             return data;
         } catch (e) {
             return rejected(e.response.data);
@@ -23,7 +23,7 @@ const getAllGenres = createAsyncThunk(
     }
 );
 
-let genreSlice = createSlice({
+const genreSlice = createSlice({
     name: 'genreSlice',
     initialState,
     reducers: {},

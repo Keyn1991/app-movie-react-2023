@@ -74,6 +74,7 @@ const movieSlice = createSlice({
     reducers: {
         setMovies: (state, action) => {
             state.movies = action.payload;
+
         },
         setMovie: (state, action) => {
             state.movie = action.payload;
@@ -93,6 +94,8 @@ const movieSlice = createSlice({
         builder
             .addCase(getAllMovies.fulfilled, (state, action) => {
                 state.movies = action.payload;
+                state.loading=true
+
             })
             .addCase(getMovie.fulfilled, (state, action) => {
                 state.movie = action.payload;
@@ -103,7 +106,7 @@ const movieSlice = createSlice({
             .addCase(getGenreID.fulfilled,(state, action)=>{
                 state.movies = action.payload;
                 state.errors = null;
-                state.loading = true;
+                state.loading = false;
             })
             .addCase(getGenreID.pending,(state,action)=>{
                 state.loading = true;

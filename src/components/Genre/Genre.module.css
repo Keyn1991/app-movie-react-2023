@@ -1,0 +1,31 @@
+
+.Genre {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+
+
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    position: relative;
+}
+
+.Genre:hover {
+
+
+    transform: scale(1.50);
+}
+
+.Genre.active {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.Genre.active:hover {
+    transform: none;
+}
+a {
+    text-decoration: none;
+    color: white;
+}

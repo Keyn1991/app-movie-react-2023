@@ -1,32 +1,34 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {genreAction} from "../../redux/slices/";
+import React, { useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllGenres } from '../../redux/slices/genreSlice';
+import css from './GetGanres.module.css';
 import {Genre} from "../Genre";
 
-
-
-const GetGenres =()=> {
-    const {genres, loading} = useSelector(state => state.genre);
+const GetGenres = () => {
+    const { genres, loading } = useSelector((state) => state.genre);
     const dispatch = useDispatch();
 
-
     useEffect(() => {
-        dispatch(genreAction.getAllGenres())
-    },[])
+        dispatch(getAllGenres());
+    }, [dispatch]);
 
-    return(
+    const bgAnimation = useSpring({
+        backgroundColor: '#282c34',
+        color: '#000'
+    });
+
+    return (
         <div>
-            <div>
-                {/*{loading && <h1>Loading.........</h1>}*/}
-            </div>
-
-            <div>
+            <animated.div className={css.Genre} style={bgAnimation}>
                 {
                     genres?.genres?.map(genre =><Genre key={genre.id} genre={genre}/>)
                 }
-            </div>
-        </div>
-    )
-}
+            </animated.div>
+            <div>{loading && <h1>Loading.........</h1>}</div>
 
-export {GetGenres};
+        </div>
+    );
+};
+
+export { GetGenres };

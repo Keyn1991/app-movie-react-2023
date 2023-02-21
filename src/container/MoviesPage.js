@@ -14,10 +14,12 @@ const MoviesPage = () => {
             <Header/>
 
             <Search/>
+<div className={css.SideAndMain}>
 
             <GetGenres/>
 
-            <MoviesList/>
+             <MoviesList/>
+</div>
 
             <Outlet/>
 

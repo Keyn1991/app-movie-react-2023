@@ -7,7 +7,7 @@ const Search = () => {
 
     let [request, setRequest] = useState("");
 
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (request) {

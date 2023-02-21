@@ -3,7 +3,54 @@
     background: #868686;
     border-radius: 40px;
     border: 1px solid black;
+    width: 45%;
+    height: 900px;
+    background: #282c34;
+    box-shadow: 10px 5px 5px black;
+    color: white;
 
+
+
+}
+
+
+.backButton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.backButton button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 8px;
+    transition: all 0.3s ease-in-out;
+}
+.backButton button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.backButton button:active {
+    transform: translateY(20px);
+}
+
+
+.backButton button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.backButton button:active {
+    transform: translateY(20px);
 }
 
 .poster{
@@ -36,9 +83,7 @@
 }
 
 .genre{
-
     display: flex;
     justify-content: space-evenly;
-
     margin: 2px;
 }

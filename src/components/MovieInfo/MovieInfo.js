@@ -8,7 +8,7 @@ import css from "./MovieInfo.module.css"
 import Header from "../Header/Header";
 import ReactStars from "react-rating-stars-component";
 import {Badge} from "reactstrap";
-import {Button,Skeleton} from "@mui/material";
+
 
 
  const MovieInfo = () => {
@@ -31,47 +31,41 @@ import {Button,Skeleton} from "@mui/material";
 
     useEffect(() => {
         setTimeout(() => {
-            setLoading(false)},100)
+            setLoading(false)},300)
     })
 
     return (<div className={css.MovieInfo}>
 
-            {loading ? (<Skeleton variant={"rounded"} height={"60px"}/>)
-                :
-                <Header/>}
+            {loading ? <h2>Loading...............</h2> : <Header/>}
 
-            {loading ? (<Skeleton variant={"text"} height={"50px"} width={"80px"}/>) :
-                <Button variant={"outlined"} size={'small'} className='backButton'
-                        onClick={() => navigate(-1)}>Back</Button>}
+
+            <div className={css.backButton}>
+
+            <button onClick={()=> navigate(-1)} className={css.back}> back</button>
+
+            </div>
+
+
 
 
             {movie ? <div className={css.MovieInfo}>
-
-                    {loading ? (<Skeleton variant={"rounded"} height={'313px'} width={'512px'}/>)
-                        :
-                        <div className='poster'>
+                    <div className='genre'>
+                        {movie.genres.map(genre =>
+                            <Badge key={genre.id} color="primary" pill={true}>{genre.name} </Badge>)}
+                    </div>
+                    {<div className={css.poster}>
                             <img src={`${posterURL + movie.backdrop_path}`} alt={movie.title}/>
-                            <div className='genre'>
-                                {movie.genres.map(genre =>
-                                    <Badge key={genre.id} color="primary" pill={true}>{genre.name} </Badge>)}
-                            </div>
-                        </div>}
 
+                        </div>}
 
                     <div className={css.description}>
 
-                        {loading ? (<Skeleton variant={"text"} height={'39px'} width={'371px'}/>)
-                            :
-                            <h2 className='title'>{movie.title}</h2>}
+                        {<h2 className='title'>{movie.title}</h2>}
 
-                        {loading ? (<Skeleton variant={"text"} height={'10px'} width={"150px"}/>)
-                            :
-                            <div className='original_title'>{movie.original_title}</div>}
+                        {<div className='original_title'>{movie.original_title}</div>}
 
 
-                        {loading ? (<Skeleton variant={"text"} height={'61px'} width={"213px"}/>)
-                            :
-                            <div>
+                        {<div>
                                 Total Votes: {movie.vote_count}
                                 <ReactStars
                                     count={10}
@@ -82,48 +76,27 @@ import {Button,Skeleton} from "@mui/material";
                                 />
                             </div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>
+                        {<div>
                                 Release: {movie.release_date}
                             </div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>
-                                Popularity: {movie.popularity}
-                            </div>}
+                        {<div>Popularity: {movie.popularity}</div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>
-                                Language: {movie.spoken_languages.map(lang =>
+                        {<div>Language: {movie.spoken_languages.map(lang =>
                                 <span key={lang.name}>{lang.english_name} </span>)}
                             </div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>Budget: {movie.budget}$</div>}
+                        {<div>Budget: {movie.budget}$</div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>Country: {movie.production_countries.map(country =>
+                        {<div>Country: {movie.production_countries.map(country =>
                                 <span key={country.iso_3166_1}>{country.name} </span>)}
                             </div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>Web Site: <a href={movie.homepage}>{movie.homepage}</a></div>}
+                        {<div>Web Site: <a href={movie.homepage}>{movie.homepage}</a></div>}
 
-                        {loading ? (<Skeleton variant={"text"}/>)
-                            :
-                            <div>Tagline: {movie.tagline}</div>}
+                        {<div>Tagline {movie.tagline}</div>}
 
-                    </div>
-
-                    {loading ? (<Skeleton variant={"text"} height={'150px'} width={'100%'}/>)
-                        :
-                        <div>Description: {movie.overview}</div>}
+                    </div>{<div>Description: {movie.overview}</div>}
 
                 </div>
                 :

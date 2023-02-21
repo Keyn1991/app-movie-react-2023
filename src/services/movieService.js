@@ -9,6 +9,7 @@ const movieService = {
     getGenreID:(genreID,page = 1)=>axiosService.get(urls.movies,{params:{page, with_genres:`${genreID}`}})
 
 
+
     // getMoviesByGenre: (id) => axiosService.get(`${urls.getMoviesByGenre}?with_genres=${id}`),
     // getGenres: () => axiosService.get(urls.genre),
     // getSearch: (search) => axiosService.get(`${urls.searchMovie}?query=${search}`)

@@ -2,22 +2,32 @@ import React, {useEffect} from 'react';
 
 import css from './MoviesList.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import {useSearchParams} from "react-router-dom";
-import {movieAction} from "../../redux";
+import {useParams, useSearchParams} from "react-router-dom";
+import {movieAction as movieActions, movieAction} from "../../redux";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 const MoviesList = () => {
+    const {id:genreId} = useParams();
 
-    const {movies} = useSelector(state => state.movie)
+    const {movies, loading} = useSelector(state => state.movie)
 
     const dispatch = useDispatch();
 
-    const [query, setQuery] = useSearchParams({page: '1'});
+    let [query, setQuery] = useSearchParams({with_genres:`${genreId}`, page: '1'});
+
+    const page = query.get('page');
+    const with_genres = query.get('with_genres');
+
 
     useEffect(() => {
 
         dispatch(movieAction.getAllMovies(query.get('page')));
 
-    }, [dispatch, query]);
+    }, [dispatch, query,]);
+
+    useEffect(()=>{
+        dispatch(movieActions.getGenreID({with_genres,page}))
+    },[genreId, page])
+
 
     const nextPage = () => {
         setQuery(value => ({page: +value.get('page') + 1}))
@@ -31,7 +41,7 @@ const MoviesList = () => {
         <div>
 
             <div className={css.Movies}>
-
+                {loading && <h1>Loading.........</h1>}
                 <div className={css.pageButtons}>
                     <button disabled={+query.get('page') < 2} onClick={prevPage} className={css.prevButton}>Previous Page</button>
 
@@ -44,7 +54,7 @@ const MoviesList = () => {
 
             </div>
 
-            <div className={css.pageButtons}>
+            <div className={css.pageButtonsTwo}>
                 <button disabled={+query.get('page') < 2} onClick={prevPage} className={css.prevButton}>Previous Page</button>
 
                 <button disabled={+query.get('page') > 499} onClick={nextPage} className={css.nextButton}>Next Page</button>
