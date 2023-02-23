@@ -28,22 +28,14 @@ const MoviesListCard = ({movie}) => {
             <Link className={css.MovieListCard} to={`/movie/${movie.id}`}>
 
                     <div className={'MoviesListCard'}>
-                    <GenreBadge movie={movie}/>
-
+                        <GenreBadge movie={movie}/>
                         <PosterPreview title={title} poster={poster_path}/>
                         <StarsRating movie={movie}/>
 
                         <div className={css.MainMovieTitle}>
                             {title}
                         </div>
-
-
-
-
-
                     </div>
-
-
             </Link>
         </div>
     );

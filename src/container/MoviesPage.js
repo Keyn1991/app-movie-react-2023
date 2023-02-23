@@ -11,11 +11,15 @@ import {Footer} from "../components/Footer/Footer";
 
 
 
+
 const MoviesPage = () => {
     return (
         <div className={css.Main}>
+
             <Header/>
             <Search/>
+
+
             <div className={css.SideAndMain}>
             <GetGenres/>
              <MoviesList/>

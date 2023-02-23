@@ -18,7 +18,7 @@ const GenreBadge = ({ movie }) => {
     let genreBadge = genres
         .filter((genre) => movie.genre_ids.includes(genre.id))
         .map((data) => data.name);
-    genreBadge.length = 1;
+    genreBadge.length = 3;
 
     return (
         <div className={css.movieGenres}>

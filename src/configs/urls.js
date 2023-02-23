@@ -9,7 +9,8 @@ const posterURL = 'https://image.tmdb.org/t/p/w500'
      movie: '/movie',
      genres: '/genre/movie/list',
      search: '/search/movie?query=',
-     video:   `/movie/{movie_id}/videos`
+
+     // video:   `/movie/{:movie_id}/videos`
 }
 
 

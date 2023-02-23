@@ -1,14 +1,54 @@
-.MovieInfo{
+.MovieInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
 
-    margin: 10px;
-    border-radius: 40px;
-    border: 1px solid black;
-    width: 98%;
-    height: 900px;
-    box-shadow: 10px 5px 5px black;
-    color: white;
 }
 
+
+.poster img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 10px 5px 15px black;
+}
+
+
+.description {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    box-shadow: 10px 5px 15px black;
+
+
+}
+
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.original_title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.genre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
 .backButton {
     margin-top: 20px;
@@ -18,7 +58,6 @@
     position: relative;
     width: 100%;
 }
-
 .backButton button {
     padding: 8px;
     border: none;
@@ -34,54 +73,16 @@
     background-color: #333333;
     color: #ffffff;
 }
-
 .backButton button:active {
     transform: translateY(20px);
 }
-
-
 .backButton button:hover {
     background-color: #333333;
     color: #ffffff;
 }
-
 .backButton button:active {
     transform: translateY(20px);
 }
-
-.poster{
-    padding-top: 50px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
-.description{
-
-    margin: 10px;
-}
-
-.overview{
-
-    margin-top: 5px ;
-}
-
-.title{
-
-    margin: 0;
-}
-
-.original_title {
-
-    margin: 0;
-    font-size: 10px;
-}
-
-.genre{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 2px;
-}
-
 .Badge {
     margin: 5px;
     font-size: 14px;
@@ -90,5 +91,24 @@
     border-radius: 20px;
     background-color: #007bff;
     color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+    .MovieInfo {
+        max-width: 1024px;
+        margin: 20px auto;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+    }
+
+
+
+}
+.backButton {
+    align-self: flex-start;
+    margin-bottom: 50px;
+    height: 35px;
 
 }
