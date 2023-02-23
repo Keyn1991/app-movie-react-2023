@@ -6,23 +6,22 @@ import {Outlet} from "react-router-dom";
 import Header from "../components/Header/Header";
 import css from './MoviesPage.module.css'
 import {GetGenres} from "../components/GetGanres";
+import {Footer} from "../components/Footer/Footer";
+
+
+
 
 const MoviesPage = () => {
     return (
         <div className={css.Main}>
-
             <Header/>
-
             <Search/>
-<div className={css.SideAndMain}>
-
+            <div className={css.SideAndMain}>
             <GetGenres/>
-
              <MoviesList/>
-</div>
-
+            </div>
+            <Footer/>
             <Outlet/>
-
         </div>
     );
 };

@@ -15,16 +15,16 @@ const GenreBadge = ({ movie }) => {
         );
     }, [dispatch]);
 
-    let genreBarge = genres
+    let genreBadge = genres
         .filter((genre) => movie.genre_ids.includes(genre.id))
         .map((data) => data.name);
-    genreBarge.length = 1;
+    genreBadge.length = 1;
 
     return (
-        <div className={css.MovieGenres}>
-            {genreBarge.map((item, index) => (
-                <div key={index} className={css.GenreBarge}>
-                    <Badge color="primary" pill={true}>
+        <div className={css.movieGenres}>
+            {genreBadge.map((item, index) => (
+                <div key={index} className={css.genreBadge}>
+                    <Badge color="primary" pill className={css.badge}>
                         {item}
                     </Badge>
                 </div>
@@ -33,4 +33,4 @@ const GenreBadge = ({ movie }) => {
     );
 };
 
-export { GenreBadge };
+export {GenreBadge};

@@ -1,10 +1,16 @@
+.main{
+    width: 100%;
+}
+
+
 .Header {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFMcCjbcfAlDynNhLTGf_FJEnIKU05toraDQ&usqp=CAU');
-    background-size: contain;
+    background-image: url('https://cdn.pampa.ir/uploads/2021/06/digiro.ir-215-780x470.jpg');
+    background-size:  revert  ;
     color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
+
 }
 
 .title {
@@ -18,6 +24,3 @@
     align-items: center;
 }
 
-.searchIcon {
-    margin-right: 10px;
-}

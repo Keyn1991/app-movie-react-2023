@@ -6,10 +6,12 @@ import {themeReducer} from "./slices/themeSlice";
 import {genreReducer} from "./slices";
 
 
+
 const rootReducer = combineReducers({
     movie: movieReducer,
     genre: genreReducer,
-    theme: themeReducer
+    theme: themeReducer,
+
 
 });
 

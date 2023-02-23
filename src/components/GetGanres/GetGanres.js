@@ -14,7 +14,7 @@ const GetGenres = () => {
     }, [dispatch]);
 
     const bgAnimation = useSpring({
-        backgroundColor: '#282c34',
+
         color: '#000'
     });
 

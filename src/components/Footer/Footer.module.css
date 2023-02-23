@@ -1,0 +1,18 @@
+.Main {
+    background-image: url('https://www.multichemie.com.br/imagens/informacoes/acido-succinico-01.jpg');
+    background-size:  revert  ;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+   height: 120px;
+}
+
+
+
+.Footer svg {
+    font-size: 2vw;
+    margin-right: 1vw;
+}
+.Footer a {
+    color: #FFDB4C;
+}

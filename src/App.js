@@ -3,9 +3,12 @@ import {Route, Routes} from "react-router-dom";
 import {MoviesPage} from "./container/MoviesPage";
 
 import {MovieInfo} from "./components/MovieInfo/MovieInfo";
-import {Badge} from "reactstrap";
 
-const App = () => (
+const App = () => {
+
+
+    return  (
+
     <div>
         <Routes>
             <Route path={''} element={<MoviesPage/>}/>
@@ -14,6 +17,7 @@ const App = () => (
             <Route path={'/genre/:id/:id'} element={<MoviesPage/>}/>
         </Routes>
     </div>
-);
+    )
+};
 
 export {App};

@@ -11,7 +11,8 @@ const initialState = {
     totalMoviesPage: 0,
     filterParam: '',
     page: '1',
-    with_genres:''
+    with_genres:'',
+    trailerPath: null
 };
 
 const getAllMovies = createAsyncThunk(
@@ -68,6 +69,41 @@ const getGenreID = createAsyncThunk(
     }
 )
 
+const getTrailer = createAsyncThunk('moviesSlice/getTrailer',
+    async ({id}, thunkAPI) => {
+        try {
+            const {data: {results}} = await movieService.getMovieTrailers(id);
+
+            return results.filter(value => value.type === 'Trailer')[0];
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    });
+
+
+
+
+
+
+
+
+
+const getById = createAsyncThunk('moviesSlice/getById',
+    async ({id}, thunkAPI) => {
+        try {
+            const {data} = await movieService.getById(id);
+            return data;
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e.response?.data);
+        }
+    });
+
+
+
+
+
+
+
 const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
@@ -86,6 +122,7 @@ const movieSlice = createSlice({
             state.page = action.payload.page;
             state.with_genres  = action.payload.with_genres;
         },
+
     },
 
 
@@ -111,6 +148,12 @@ const movieSlice = createSlice({
             .addCase(getGenreID.pending,(state,action)=>{
                 state.loading = true;
             })
+            .addCase(getById.fulfilled, (state, action) => {
+                state.details = action.payload;
+            })
+            .addCase(getTrailer.fulfilled, (state, action) => {
+                state.trailerPath = action.payload;
+            })
 
     },
 });
@@ -124,7 +167,9 @@ const movieAction = {
     setMovie,
     setFilterParam,
     setQueryParams,
-    getGenreID
+    getGenreID,
+    getById,
+    getTrailer
 
 };
 
