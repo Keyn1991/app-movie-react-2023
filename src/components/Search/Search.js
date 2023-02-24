@@ -21,7 +21,13 @@ const Search = () => {
     }, [request, dispatch]);
 
     const handleChange = (event) => {
-        dispatch(movieAction.searchMovie(event.target.value));
+        const value = event.target.value;
+        dispatch(movieAction.searchMovie(value));
+        if (value === "") {
+            dispatch(movieAction.getAllMovies());
+        } else {
+            dispatch(movieAction.searchMovie(value));
+        }
     };
 
     return (

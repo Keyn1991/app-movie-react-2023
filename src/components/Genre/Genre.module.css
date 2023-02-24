@@ -2,18 +2,16 @@
 .Genre {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-
-
+   align-items: center;
 
     border-radius: 20px;
     backdrop-filter: blur(20px);
     position: relative;
+    margin-left: 20px;
 }
 
 .Genre:hover {
-
-
-    transform: scale(1.50);
+    transform: scale(1.5);
 }
 
 .Genre.active {
