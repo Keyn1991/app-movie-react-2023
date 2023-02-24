@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getAllGenres } from '../../redux/slices/genreSlice';
 import css from './GetGanres.module.css';
 import {Genre} from "../Genre";

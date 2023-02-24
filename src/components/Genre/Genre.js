@@ -1,11 +1,11 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
+
 import css from './Genre.module.css'
 const Genre = ({genre}) => {
 
     const dispatch = useDispatch();
-
 
     return (
         <div className={css.Genre}>

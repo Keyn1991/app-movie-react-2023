@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactStars from "react-rating-stars-component/dist/react-stars";
+
 import css from './StarsRating.module.css'
 
 const StarsRating = ({movie}) => {

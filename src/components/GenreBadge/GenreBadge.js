@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { genreAction } from '../../redux';
 import { Badge } from 'reactstrap';
+
 import css from './GenreBarge.module.css';
 
 const GenreBadge = ({ movie }) => {

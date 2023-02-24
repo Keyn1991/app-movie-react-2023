@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+
 import {axiosService} from "../../services";
 
 const MovieTrailers = ({ id }) => {
@@ -23,41 +24,20 @@ const MovieTrailers = ({ id }) => {
 
         <div>
             {trailers.length > 0 ? (
-                <div>
-                    {trailers.map((trailer) => (
-                        <li key={trailer.key}>
-                            <iframe
-                                allowFullScreen={true}
-                                            title={"trailer"}
-                                            width={565}
-                                            height={400}
-                                            src={`https://www.youtube.com/embed/${trailer.key}`}
-                            >
-                                {trailer.name}
-                            </iframe>
-                        </li>
-                    ))}
-                </div>
+                <iframe
+                    allowFullScreen={true}
+                    title={"trailer"}
+                    width={565}
+                    height={400}
+                    src={`https://www.youtube.com/embed/${trailers[0].key}`}
+                >
+                    {trailers[0].name}
+                </iframe>
             ) : (
                 <p>No trailers found</p>
             )}
         </div>
 
-
-
-
-        // <div>
-        //     {trailerPath && (
-        //         <iframe
-        //             allowFullScreen={true}
-        //             title={"trailer"}
-        //             width={565}
-        //             height={400}
-        //             src={`https://www.youtube.com/embed/${trailerPath}`}
-        //         ></iframe>
-        //     )}
-        //
-        // </div>
     );
 };
 

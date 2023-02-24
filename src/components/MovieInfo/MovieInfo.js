@@ -1,20 +1,19 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import ReactStars from "react-rating-stars-component";
+import {Badge} from "reactstrap";
 import React, {useEffect, useState} from "react";
 
 import {movieAction} from "../../redux";
 import {posterURL} from "../../configs/urls"
 import css from "./MovieInfo.module.css"
-import Header from "../Header/Header";
-import ReactStars from "react-rating-stars-component";
-import {Badge} from "reactstrap";
+import {Header} from "../Header/Header";
 import {MovieTrailers} from "../MovieTrailers/MovieTrailers";
 
 
 const MovieInfo = () => {
 
     const {movie} = useSelector(state => state.movie);
-    const {trailers} = useSelector(state => state.movie);
 
     const dispatch = useDispatch();
 

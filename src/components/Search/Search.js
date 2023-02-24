@@ -1,34 +1,40 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch} from "react-redux";
+
+import {useEffect, useRef} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
 import {movieAction} from "../../redux";
 import css from './Search.module.css'
 const Search = () => {
-
-    let [request, setRequest] = useState("");
-
+    const request = useSelector((state) => state.movie.request);
     const dispatch = useDispatch();
+    const prevRequest = useRef("");
 
     useEffect(() => {
-        if (request) {
-            dispatch(movieAction.searchMovie(request));
+        if (request !== prevRequest.current) {
+            if (request === "") {
+                dispatch(movieAction.getAllMovies());
+            } else {
+                dispatch(movieAction.searchMovie(request));
+            }
+            prevRequest.current = request;
         }
-    }, [request]);
+    }, [request, dispatch]);
 
-
-
+    const handleChange = (event) => {
+        dispatch(movieAction.searchMovie(event.target.value));
+    };
 
     return (
         <div className={css.searchInput}>
             <input
                 className={`${css.input} input`}
                 type="text"
-                placeholder={'Lets find your movie...'}
-                onChange={(event) => setRequest(event.target.value)}
+                placeholder={"Let's find your movie..."}
+                onChange={handleChange}
                 value={request}
             />
         </div>
     );
 };
 
-export  {Search};
+export { Search };

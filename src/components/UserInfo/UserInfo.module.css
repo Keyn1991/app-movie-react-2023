@@ -3,10 +3,16 @@
     align-items: center;
     justify-content: flex-end;
     width: 20%;
-
-
-
 }
+
+.userIcon:hover {
+    background-color: #f8f8f8;
+    transform: scale(1.1); /* увеличение элемента в 1.1 раза */
+    transition: all 0.3s ease-in-out; /* плавное изменение стилей в течение 0.3 секунды */
+}
+
+
+
 
 .userIcon {
     border-radius: 10%;
@@ -17,3 +23,7 @@
 
 
 }
+
+
+
+

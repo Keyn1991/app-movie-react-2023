@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {movieService} from "../../services";
 
 const initialState = {
@@ -12,7 +13,8 @@ const initialState = {
     filterParam: '',
     page: '1',
     with_genres:'',
-    trailerPath: null
+    trailerPath: null,
+
 };
 
 const getAllMovies = createAsyncThunk(
@@ -86,18 +88,12 @@ const getTrailer = createAsyncThunk('moviesSlice/getTrailer',
 
 
 
-
-
-
-
-
 const movieSlice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
         setMovies: (state, action) => {
             state.movies = action.payload;
-
         },
         setMovie: (state, action) => {
             state.movie = action.payload;
@@ -109,6 +105,7 @@ const movieSlice = createSlice({
             state.page = action.payload.page;
             state.with_genres  = action.payload.with_genres;
         },
+
 
     },
 
