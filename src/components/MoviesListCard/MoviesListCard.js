@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+
 import {Link} from "react-router-dom";
 
 import css from './MovieListCard.module.css'
@@ -8,7 +8,7 @@ import {StarsRating} from "../StarsRating/StarsRating";
 
 
 const MoviesListCard = ({movie}) => {
-    const [searchQuery, setSearchQuery] = useState("");
+
     const {title, poster_path} = movie;
 
     return (
