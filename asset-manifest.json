@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/app-movie-react-2023/static/css/main.e42d8b49.css",
-    "main.js": "/app-movie-react-2023/static/js/main.8496c094.js",
-    "index.html": "/app-movie-react-2023/index.html",
-    "main.e42d8b49.css.map": "/app-movie-react-2023/static/css/main.e42d8b49.css.map",
-    "main.8496c094.js.map": "/app-movie-react-2023/static/js/main.8496c094.js.map"
+    "main.css": "/Keyn1991/app-movie-react-2023/static/css/main.36d8d01c.css",
+    "main.js": "/Keyn1991/app-movie-react-2023/static/js/main.4cbe0920.js",
+    "static/media/DALL-Logo.png": "/Keyn1991/app-movie-react-2023/static/media/DALL-Logo.42f01fa4aa6f306b733c.png",
+    "index.html": "/Keyn1991/app-movie-react-2023/index.html",
+    "main.36d8d01c.css.map": "/Keyn1991/app-movie-react-2023/static/css/main.36d8d01c.css.map",
+    "main.4cbe0920.js.map": "/Keyn1991/app-movie-react-2023/static/js/main.4cbe0920.js.map"
   },
   "entrypoints": [
-    "static/css/main.e42d8b49.css",
-    "static/js/main.8496c094.js"
+    "static/css/main.36d8d01c.css",
+    "static/js/main.4cbe0920.js"
   ]
 }
