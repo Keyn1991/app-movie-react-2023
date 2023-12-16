@@ -1,6 +1,6 @@
 
 const baseURL = "https://api.themoviedb.org/3";
-const posterURL = 'https://image.tmdb.org/t/p/w500'
+const posterURL = 'https://image.tmdb.org/t/p/w300'
  const urls = {
 
      movies: '/discover/movie',
@@ -8,7 +8,7 @@ const posterURL = 'https://image.tmdb.org/t/p/w500'
      genres: '/genre/movie/list',
      search: '/search/movie?query=',
 
-     // video:   `/movie/{:movie_id}/videos`
+     video:   `/movie/{:movie_id}/videos`
 }
 
 

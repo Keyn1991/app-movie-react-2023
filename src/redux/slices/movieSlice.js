@@ -59,7 +59,7 @@ const searchMovie = createAsyncThunk(
     }
 )
 
-const getGenreID = createAsyncThunk(
+export const getGenreID = createAsyncThunk(
     'movieSlice/getGenreID',
     async ({with_genres,page},{rejectWithValue})=>{
         try {

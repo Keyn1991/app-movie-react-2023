@@ -4,7 +4,7 @@ import {useParams, useSearchParams} from "react-router-dom";
 
 import css from './MoviesList.module.css'
 import {movieAction as movieActions, movieAction} from "../../redux";
-import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import {MoviesListCard} from "../MoviesListCard";
 const MoviesList = () => {
 
     const {id:genreId} = useParams();

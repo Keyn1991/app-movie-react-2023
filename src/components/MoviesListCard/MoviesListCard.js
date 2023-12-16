@@ -2,9 +2,9 @@
 import {Link} from "react-router-dom";
 
 import css from './MovieListCard.module.css'
-import {PosterPreview} from "../PosterPreview/PosterPreview";
-import {GenreBadge} from "../GenreBadge/GenreBadge";
-import {StarsRating} from "../StarsRating/StarsRating";
+import {PosterPreview} from "../PosterPreview";
+import {GenreBadge} from "../GenreBadge";
+import {StarsRating} from "../StarsRating";
 
 
 const MoviesListCard = ({movie}) => {

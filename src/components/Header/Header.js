@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import css from "./Header.module.css"
-import {UserInfo} from "../UserInfo/UserInfo";
-import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
+import {UserInfo} from "../UserInfo";
+import {ThemeSwitcher} from "../ThemeSwitcher";
 
 const Header = () => {
     const handleReload = () => {
@@ -18,7 +18,7 @@ return (
             </div>
             <ThemeSwitcher />
             <div className={css.title}>
-                <h1>APP-MOVIE-PROJECT</h1>
+                <h1>ScreenSpectrum</h1>
             </div>
             <UserInfo />
         </div>
