@@ -29,4 +29,5 @@
 
 .buttonSwitch button:active {
     transform: translateY(20px);
+    color: #000000;
 }
