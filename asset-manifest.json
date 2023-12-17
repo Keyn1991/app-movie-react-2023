@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/app-movie-react-2023/static/css/main.36d8d01c.css",
+    "main.css": "/app-movie-react-2023/static/css/main.1e7ec625.css",
     "main.js": "/app-movie-react-2023/static/js/main.ef645644.js",
+    "static/media/head-footer.png": "/app-movie-react-2023/static/media/head-footer.fde9ea0743ed097cb295.png",
+    "static/media/ggggggg.png": "/app-movie-react-2023/static/media/ggggggg.29126fca1fdc39255e06.png",
     "static/media/DALL-Logo.png": "/app-movie-react-2023/static/media/DALL-Logo.42f01fa4aa6f306b733c.png",
     "index.html": "/app-movie-react-2023/index.html",
-    "main.36d8d01c.css.map": "/app-movie-react-2023/static/css/main.36d8d01c.css.map",
+    "main.1e7ec625.css.map": "/app-movie-react-2023/static/css/main.1e7ec625.css.map",
     "main.ef645644.js.map": "/app-movie-react-2023/static/js/main.ef645644.js.map"
   },
   "entrypoints": [
-    "static/css/main.36d8d01c.css",
+    "static/css/main.1e7ec625.css",
     "static/js/main.ef645644.js"
   ]
 }
