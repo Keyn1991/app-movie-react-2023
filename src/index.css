@@ -13,13 +13,14 @@ code {
     monospace;
 }
 body.dark {
-  background-color: #282c34;
+  background-image: url('/src/Images/head-footer.png');
+  background-size:  cover;
   color: #fff;
 }
 
 body.light {
   color: #1d0021;
-  background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-leisure-time-cinema-watching-movie-background-picture-image_1119428.jpg');
+  background-image: url('/src/Images/ggggggg.png');
   background-size:  cover;
 
 }

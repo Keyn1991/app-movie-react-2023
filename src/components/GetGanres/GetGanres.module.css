@@ -15,6 +15,8 @@
     margin-left: 20px;
     backdrop-filter: blur(20px);
     position: relative;
+
+
 }
 
 .Genre:hover {
@@ -26,7 +28,6 @@
 }
 
 .Genre.active {
-    color: #fff;
     background-color: #007bff;
     border-color: #007bff;
 }
